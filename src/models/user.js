@@ -3,7 +3,7 @@ const crypt = require('../utilities/crypto-service');
 
 const userSchema = new mongoose.Schema(
     {
-        userId: mongoose.Schema.Types.ObjectId,
+        _id: mongoose.Schema.Types.ObjectId,
         publicKey: String
     },
     {
