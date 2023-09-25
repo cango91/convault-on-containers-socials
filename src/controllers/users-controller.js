@@ -15,11 +15,11 @@ const utils = require('../utilities/utils');
 //     }
 // }
 
-const createUser = async (userId) =>{
+const createUser = async (userId, username) =>{
     try {
         const existingUser = await User.findOne({ _id: userId });
         if (existingUser) throw new Error('Record already exists');
-        await User.create({ _id: userId });
+        await User.create({ _id: userId, username });
     } catch (error) {
         console.error(error);
     }

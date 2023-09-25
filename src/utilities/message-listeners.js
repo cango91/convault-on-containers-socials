@@ -25,7 +25,7 @@ async function initializeListeners() {
 async function routeMessage(routingKey, content) {
     switch (routingKey) {
         case 'user.created':
-            await require('../controllers/users-controller').createUser(content.userId);
+            await require('../controllers/users-controller').createUser(content.userId, content.username);
             break;
         case 'user.deleted':
             await require('../controllers/users-controller').deleteUser(content.userId);
